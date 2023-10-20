@@ -1,0 +1,22 @@
+{
+  "name": "reportes_incidencias",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nelson83mdq/reportesIncidentes_backEnd.git"
+  },
+  "author": "Brizuela, Nelson Damian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nelson83mdq/reportesIncidentes_backEnd/issues"
+  },
+  "homepage": "https://github.com/nelson83mdq/reportesIncidentes_backEnd#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
