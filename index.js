@@ -32,3 +32,9 @@ app.listen(puerto, err => {
     // Si no se detuvo arriba con el return, entonces todo va bien ;)
     console.log(`Escuchando en el puerto :${puerto}`);
 });
+/*
+ * EJEMPLO DE USO ->
+    $ node index.js
+    *   ACCEDER A LOCALHOST:30000/ RECURSO
+    *
+ */
