@@ -25,9 +25,9 @@ app.get('/hola', (peticion, respuesta) => {
 });
 
 app.get('/album', (req, res)=> {
-    var sql = "select * from Track"
+    var sql = "select * from Album"
     var params = []
-    db.open();
+    
     db.all(sql, params, (err, rows) => {
         if (err) {
           res.status(400).json({"error":err.message});

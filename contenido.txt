@@ -1,0 +1,28 @@
+Ubicaciones en planta
+fecha , hora inicio, hora fin
+tipo incidente [varios tildes]
+    ataque de panico
+    atrapamiento
+    atropellamiento
+    caida desde altura
+    desmayo
+    epilepsia
+    fractura
+    incendio
+    quemaduras
+    rescate altura
+    rescate espacio confinado
+    victimas multiples
+materiales utilizados
+    gasa, venda o cinta adhesiva
+    silla de ruedas
+    tabla / canasta
+    manga / viper / troncoconica
+    mosquetones / poleas
+    cuerdas / cordin / cintas
+    arnes de seguridad
+    lentes seguridad
+    extintores
+Brigadistas intervinientes: lista personas (gpid)
+Descripcion breve
+Acciones realizadas
