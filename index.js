@@ -1,3 +1,5 @@
+var db = require('./database.js');
+
 const express = require("express"),
     path = require("path"),
     app = express(),
@@ -17,9 +19,25 @@ app.get('/pagina', (peticion, respuesta) => {
 app.get('/hola', (peticion, respuesta) => {
     let mascota = {
         nombre: "Maggie",
-        edad: 2,
+        edad: 4,
     };
     respuesta.json(mascota);
+});
+
+app.get('/album', (req, res)=> {
+    var sql = "select * from Track"
+    var params = []
+    db.open();
+    db.all(sql, params, (err, rows) => {
+        if (err) {
+          res.status(400).json({"error":err.message});
+          return;
+        }
+        res.json({
+            "message":"success",
+            "data":rows
+        })
+      });
 });
 
 // Una vez definidas nuestras rutas podemos iniciar el servidor
