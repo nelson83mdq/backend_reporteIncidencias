@@ -4,19 +4,20 @@ const express = require("express"),
     path = require("path"),
     app = express(),
     puerto = 3000;
-
+/*
 app.get('/', (peticion, respuesta) => {
     // Podemos acceder a la petición HTTP
     let agenteDeUsuario = peticion.header("user-agent");
     respuesta.send("La ruta / solicitada con: " + agenteDeUsuario);
-});
+});*/
+
 app.get('/pagina', (peticion, respuesta) => {
     // Servir archivo HTML, o cualquier otro archivo
     let rutaDeArchivo = path.join(__dirname, "plantilla.html");
     respuesta.sendFile(rutaDeArchivo);
 });
 
-app.get('/hola', (peticion, respuesta) => {
+app.get('/test', (peticion, respuesta) => {
     let mascota = {
         nombre: "Maggie",
         edad: 4,
@@ -24,8 +25,8 @@ app.get('/hola', (peticion, respuesta) => {
     respuesta.json(mascota);
 });
 
-app.get('/album', (req, res)=> {
-    var sql = "select * from Album"
+app.get('/brigadistas', (req, res)=> {
+    var sql = "select * from brigadista"
     var params = []
     
     db.all(sql, params, (err, rows) => {
@@ -38,6 +39,22 @@ app.get('/album', (req, res)=> {
             "data":rows
         })
       });
+});
+
+app.get('/', (req, res) => {
+    var sql = "SELECT * FROM data"
+    db.all(sql, [], (err, rows)=> {
+        if (err) {
+            res.status(400).json({"error ":err.message});
+            return;
+        } else {
+            res.json({
+                "message":"success",
+                "data":rows,
+                "total":1
+            });
+        }
+    });
 });
 
 // Una vez definidas nuestras rutas podemos iniciar el servidor
