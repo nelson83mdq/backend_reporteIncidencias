@@ -1,4 +1,4 @@
-var db = require('./database.js');
+//var db = require('./database.js');
 
 const express = require("express"),
     path = require("path"),
@@ -17,14 +17,14 @@ app.get('/pagina', (peticion, respuesta) => {
     respuesta.sendFile(rutaDeArchivo);
 });
 
-app.get('/test', (peticion, respuesta) => {
+app.get('/', (peticion, respuesta) => {
     let mascota = {
-        nombre: "Maggie",
-        edad: 4,
+        status: 200,
+        texto: "- texto de prueba -",
     };
     respuesta.json(mascota);
 });
-
+/*
 app.get('/brigadistas', (req, res)=> {
     var sql = "select * from brigadista"
     var params = []
@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
         }
     });
 });
-
+*/
 // Una vez definidas nuestras rutas podemos iniciar el servidor
 app.listen(puerto, err => {
     if (err) {
